@@ -26,7 +26,28 @@
 - Ahora instalamos nodemon con el comando "npm install nodemon -D" para poder correr el servidor sin detenerlo y que guarde los cambios y la -D para que quede en las   devdependencies.
 - En los scripts del package.json agregamos '"dev": "nodemon index.js"' para ejecutar el servidor con "npm run dev".
 - Creamos un archivo ".gitignore" donde podemos colocar carpetas y archivos que no queremos que se suban cuando actualizamos Github.
-- 
-
-
-
+- Ahora instalamos morgan con el comando "npm install morgan -D" para poder recibir solicitudesdesde el postman como GET, POST, PUT etc.
+- Importamos el archivo morgan en nuestro servidor.js y lo usamos con el metodo .use.
+- Creamos una carpeta y un archivo .js donde vamos a realizar el proceso de crear nuevos objetos, en este caso paises.
+- Se creo la carpeta controlador para controlar como creamos, editamos, leemos y elminamos los paises.
+- Se creo la carpeta de rutas y su archivo js para enrutar los archivos desde el archivo de la carpeta controlador.
+- Se creo un arreglo en el archivo de controlador y un msj en consola para saber si funciona y se exporta.
+- En el archivo de rutas se importa el del controlador ademas del router de express para controlar las rutas.
+- Se declara la variable del controlador y se usa con el post para acceder a uno de los objetos y saber si funciona, despues se exporta el archivo de rutas.
+- En el archivo de servidor de importa el de rutas y se usa con el .use ademas de que antes se define la ruta entre comillas donde uno quiere acceder.
+- Ahora instalamos moongose para usar sus herramientas con el comando "npm i mongoose".
+- Se crea el archivo conexion para anclarlo a la base de datos Mongo.
+- Proseguimos a instalar dotenv con el comando "npm install dotenv -D" para poder usar las variables de entorno y la importamos en el index.
+- Importamos el mongoose en el archivo conexion.
+- Creamos el archivo .env para las variables de entorno.
+- Conectamos mediante process a la variable de entorno en el archivo .env
+- En el archivo .dev colocamos la variable en mayusculas y el string que copiamos de la pagina de mongo atlas en nuestra base de datos y cambiamos la palabra password por el password que originalmente creamos.
+-  Probamos que nuestro visual y postman esten anclados a la base de datos en mongo.
+- Creamos el archivo de esquema para importar el mongoose y asegurarnos de crear el objeto con los requerimientos que queremos que postman nos envie.
+- Editamos el objeto POST creado anteriormente para que se cree un usuario y lo hacemos con TRY y Catch usando una funcion asincrona.
+- Lo hacemos solicitandole el body al postman y guardandolo en una variable y despues con un condicional si esa variable tiene algo la ponemos en consola para verla y refrescamos atlas para asegurarnos que tbn quede ahi.
+- Creamos un nuevo objeto esta vez para leer todos los datos de la base y lo hacemos con un get en POSTMAN y con una variable en el archivo en el archivo de controladores a la q le aignamos lo que encontramos con find(). 
+- Anclamos en el archivo de rutas el objeto de leer todos los paises.
+- Hacemos los mismo con otro objeto pero esta vez para leer un solo país se usa el findbyid, y se ancla igualmente al archivo de rutas y con el get en postman.
+- Repetimos el proceso para el objeto actualizar país pero esta vez con findbyidandupdate, y al igual se ancla al archivo de rutas y en el POSTMAN con PUT.
+- Se hace lo mismo con el ultimo que es para borrar un archivo con findbyidanddelete, se ancla igualmente y en el POSTMAN se usa con DEL.
