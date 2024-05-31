@@ -51,3 +51,15 @@
 - Hacemos los mismo con otro objeto pero esta vez para leer un solo país se usa el findbyid, y se ancla igualmente al archivo de rutas y con el get en postman.
 - Repetimos el proceso para el objeto actualizar país pero esta vez con findbyidandupdate, y al igual se ancla al archivo de rutas y en el POSTMAN con PUT.
 - Se hace lo mismo con el ultimo que es para borrar un archivo con findbyidanddelete, se ancla igualmente y en el POSTMAN se usa con DEL.
+
+### Instructivo
+
+- Crea un nuevo proyecto en Node
+- Instala dependencias que vamos a necesitar (express, mongoose, dotenv, morgan y nodemon (opcional))
+- Crea archivos de index y servidor para anclar a POSTMAN.
+- Ahora crea un archivo conexion y anclarlo con la base de datos en atlas con el visual.
+- Crear archivos de enrutamiento, esquema y controlador para crear el nucelo del proyecto y como hacerlo.
+- Crear los enrutamientos en POSTMAN con el GET, POST, PUT y DEL.
+- Anclarlos al visula para agregar, eliminar, actualizar y borrar archivos.
+- Verificar que los datos del POSTMAN estan quedando guardados en la base en el ATLAS.
+- Agregamos datos al POSTMAN y ya verificamos errores.    
