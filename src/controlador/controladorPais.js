@@ -1,10 +1,19 @@
 import esquemaPais from "../esquema/esquemaPais.js";
+import bcrypt from "bcryptjs";
 
 const controladorPais = {
     crearPais: async (solicitud, respuesta) => {
         try {
-            const nuevoPais = new esquemaPais(solicitud.body);
-            /* console.log(nuevoPais); */
+            const {nombre, idioma, moneda, independencia, lema, lugarPorSuperficie} = solicitud.body;
+            const lemaProtegido = await bcrypt.hash(lema, 10)
+            const nuevoPais = new esquemaPais({
+                nombre,
+                idioma, 
+                moneda, 
+                independencia,
+                lema: lemaProtegido,
+                lugarPorSuperficie,
+            });
             const paisCreado = await nuevoPais.save();
             console.log(paisCreado);
             if (paisCreado._id) {
